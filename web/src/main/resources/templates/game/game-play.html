@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+      layout:decorate="~{fragments/layout}" lang="en">
+<head>
+    <title>Game</title>
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+    <div align="center">
+        <h1 id="game-title"></h1>
+        <h3 id="main-message">
+            Main Message Content
+        </h3>
+
+        <h3 id="result-message">
+            Result Message Content
+        </h3>
+
+        <form id="game-form" method="post">
+            <label id="enter-guess" for="guess"></label>
+            <input id="guess" type="number" name="guess" value="0"/>
+            <input id="submit" type="submit"/>
+        </form>
+
+        <footer>
+            <p>Created by goes here</p>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

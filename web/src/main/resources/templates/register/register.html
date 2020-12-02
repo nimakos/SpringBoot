@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>Registration Page</title>
+    <!--Style-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/register-form.css}"/>
+    <!--Check password weakness-->
+    <script th:src="|/js/bootstrap-zxcvbn.jquery.js|"></script>
+    <script src="https://cdn.jsdelivr.net/npm/zxcvbn@4.4.2/dist/zxcvbn.js"></script>
+    <script th:src="|/js/password-weakness.js|"></script>
+    <!--Validators-->
+    <script th:src="|/js/register-validations.js|"></script>
+</head>
+
+<body class="gray-bg">
+    <div layout:fragment="content" th:remove="tag">
+        <div id="card_light" class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">Create Account</h4>
+                <p class="text-center">Get started with your free account</p>
+                <p>
+                    <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+                    <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+                </p>
+                <p class="divider-text">
+                    <span class="bg-light">OR</span>
+                </p>
+                <form id="registerForm"
+                      autocomplete="on"
+                      action="#"
+                      th:action="@{/register}"
+                      th:object="${user}"
+                      method="post"
+                      class="needs-validation"
+                      role="form"
+                      novalidate>
+
+                    <div th:if="${confirmationMessage}" class="alert alert-success"
+                         role="alert" th:text=${confirmationMessage}></div>
+
+                    <div th:if="${errorMessage}"
+                         class="alert alert-danger" role="alert"
+                         th:text="${errorMessage}"></div>
+
+                    <div th:if="${#fields.hasErrors('firstName')}"
+                         th:errors="*{firstName}"
+                         class="validation-message alert alert-danger" role="alert"></div>
+
+                    <div th:if="${#fields.hasErrors('lastName')}"
+                         th:errors="*{lastName}"
+                         class="validation-message alert alert-danger" role="alert"></div>
+
+                    <div th:if="${#fields.hasErrors('email')}"
+                         th:errors="*{email}"
+                         class="validation-message alert alert-danger" role="alert"></div>
+
+                    <div th:if="${#fields.hasErrors('password')}"
+                         th:errors="*{password}"
+                         class="validation-message alert alert-danger" role="alert"></div>
+
+                    <div th:if="${#fields.hasErrors('passwordConfirm')}"
+                         th:errors="*{passwordConfirm}"
+                         class="validation-message alert alert-danger" role="alert"></div>
+
+                    <div class="form-group input-group has-feedback">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+
+                        <input type="text"
+                               th:field="*{firstName}"
+                               placeholder="First Name"
+                               class="form-control"
+                               required/>
+
+                    </div> <!-- FIRSTNAME -->
+
+                    <div class="form-group input-group has-feedback">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+
+                        <input type="text"
+                               th:field="*{lastName}"
+                               placeholder="Last Name"
+                               class="form-control"
+                               required/>
+                    </div> <!--LASTNAME-->
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                        </div>
+                        <input type="email"
+                               th:field="*{email}"
+                               placeholder="Email Address"
+                               class="form-control"
+                               data-error="This email address is invalid"
+                               required/>
+                    </div> <!-- EMAIL -->
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                        </div>
+
+                        <input type="text"
+                               th:field="*{phoneNumber}"
+                               placeholder="Phone number"
+                               class="form-control"
+                               required/>
+                    </div> <!--PHONE-->
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input name="password"
+                               th:field="*{password}"
+                               type="password"
+                               id="password"
+                               placeholder="Create Password"
+                               class="form-control"
+                               required />
+                    </div> <!--PASSWORD-->
+
+                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                         role="progressbar"
+                         aria-valuenow="75"
+                         aria-valuemin="0"
+                         aria-valuemax="100"
+                         id="progress">
+                    </div>
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input type="password"
+                               th:field="*{passwordConfirm}"
+                               class="form-control"
+                               id="signup-password-confirm"
+                               placeholder="Confirm Password"
+                               name="ConfirmPassword"
+                               required/>
+                    </div> <!--REPEAT PASSWORD-->
+
+                    <div class="form-group">
+                        <button name="register-submit"
+                                type="submit"
+                                class="btn btn-primary btn-block"
+                                id="register-submit"> Create Account
+                        </button>
+                    </div> <!-- form-group// -->
+                    <p class="text-center">Have an account? <a href="/login">Log In</a> </p>
+                </form>
+            </article>
+        </div> <!-- card.// -->
+    </div>
+</body>
+
+</html>

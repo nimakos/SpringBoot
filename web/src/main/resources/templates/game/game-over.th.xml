@@ -1,0 +1,14 @@
+<thlogic xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <attr sel="#game-title"
+          th:text="#{game.title}"/>
+    <attr sel="#game-over"
+          th:text="#{game.over}"/>
+    <attr sel="#result-message"
+          th:text="${__${T(gr.nikolis.mappings.game.AttributeNames).RESULT_MESSAGE}__}"/>
+    <attr sel="#restart"
+          th:href="@{__${T(gr.nikolis.mappings.game.GameMappings).RESTART}__}"
+          th:text="#{game.play}"/>
+    <attr sel="#home"
+          th:href="@{__${T(gr.nikolis.mappings.game.GameMappings).GAME_HOME}__}"
+          th:text="#{game.home}"/>
+</thlogic>

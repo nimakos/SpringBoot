@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+      layout:decorate="~{fragments/layout}" lang="en">
+<head>
+    <title id="title">Title content</title>
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+    <div align="center">
+        <h1 id="welcome"></h1>
+        <h3>
+            <a id="play-game">
+                Click to Play
+            </a>
+        </h3>
+        <footer>
+            <p>Create by Vangelis Nikolis</p>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

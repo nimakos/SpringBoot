@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+      layout:decorate="~{fragments/layout}">
+
+<body class="gray-bg">
+<div layout:fragment="content" th:remove="tag">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+
+            <hr/>
+            <h1>Something went wrong</h1>
+
+            <div th:if="${errorMessage}" class="alert alert-danger"
+                 role="alert" th:text=${errorMessage}></div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

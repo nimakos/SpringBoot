@@ -1,0 +1,19 @@
+<thlogic xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <attr sel="#customer_ref"
+          th:href="@{__${T(gr.nikolis.mappings.customer.CustomerMappings).CUSTOMER_LIST}__}"/>
+
+    <attr sel="#game_ref"
+          th:href="@{__${T(gr.nikolis.mappings.game.GameMappings).GAME_HOME}__}"/>
+
+    <attr sel="#home_ref"
+          th:href="@{__${T(gr.nikolis.mappings.home.HomeMappings).HOME_DEFAULT}__}"/>
+
+    <attr sel="#img_path"
+          th:href="@{__${T(gr.nikolis.mappings.home.HomeMappings).HOME_DEFAULT}__}"/>
+
+    <attr sel="#login_ref"
+          th:href="@{__${T(gr.nikolis.mappings.login.LoginMappings).LOGIN}__}"/>
+
+    <attr sel="#register_ref"
+          th:href="@{__${T(gr.nikolis.mappings.register.RegisterMappings).REGISTER}__}"/>
+</thlogic>

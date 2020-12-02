@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>User is not authenticated</title>
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+    <h1>User Disabled</h1>
+    <p><a id="home_ref">Back to home page</a></p>
+</div>
+</body>
+</html>

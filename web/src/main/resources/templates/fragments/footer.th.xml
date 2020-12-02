@@ -1,0 +1,5 @@
+<thlogic xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <attr sel="#logout_ref" th:href="@{__${T(gr.nikolis.mappings.login.LoginMappings).LOGOUT}__}"/>
+
+    <attr sel="#created-by" th:text="|@2020 #{game.createdBy} Vangelis Nikolis|"/>
+</thlogic>

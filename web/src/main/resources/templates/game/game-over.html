@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+      layout:decorate="~{fragments/layout}" lang="en">
+<head>
+    <title>Game Finished</title>
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+    <div align="center">
+        <h1 id="game-title"></h1>
+        <h2 id="game-over"></h2>
+        <h3 id="result-message">Result Message Context</h3>
+        <h3>
+            <a id="restart"></a>
+        </h3>
+        <h3>
+            <a id="home"> </a>
+        </h3>
+
+        <footer>
+            <p>Create by Vangelis Nikolis</p>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+      layout:decorate="~{fragments/layout}">
+
+<head>
+    <title>Add Employee</title>
+</head>
+
+<body>
+<div layout:fragment="content" th:remove="tag">
+    <div class="container my-5">
+        <h1> Add Employee</h1>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form id="form_action" action="#" th:object="${customer}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="firstName" class="col-form-label">First Name</label>
+                                <input type="text" th:field="*{firstName}" class="form-control"
+                                       id="firstName" placeholder="First Name"/>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="lastName" class="col-form-label">Last Name</label>
+                                <input type="text" th:field="*{lastName}" class="form-control"
+                                       id="lastName" placeholder="Last Name"/>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="age" class="col-form-label">Email</label>
+                                <input type="number" th:field="*{age}" class="form-control"
+                                       id="age" placeholder="Age"/>
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value=" Submit ">
+                            </div>
+
+                            <input type="hidden" id="id" th:field="*{id}">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

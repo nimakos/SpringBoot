@@ -1,0 +1,14 @@
+<thlogic xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <attr sel="#game-title"
+          th:text="#{game.title}"/>
+    <attr sel="#main-message"
+          th:text="${__${T(gr.nikolis.mappings.game.AttributeNames).MAIN_MESSAGE}__}"/>
+    <attr sel="#result-message"
+          th:text="${__${T(gr.nikolis.mappings.game.AttributeNames).RESULT_MESSAGE}__}"/>
+    <attr sel="#game-form"
+          th:action="@{__${T(gr.nikolis.mappings.game.GameMappings).GAME_PLAY}__}"/>
+    <attr sel="#enter-guess"
+          th:text="#{game.enter.guess}"/>
+    <attr sel="#submit"
+          th:value="#{game.submit}"/>
+</thlogic>

@@ -1,0 +1,4 @@
+<thlogic xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <attr sel="#form_action"
+          th:action="@{__${T(gr.nikolis.mappings.customer.CustomerMappings).CREATE_CUSTOMER}__}"/>
+</thlogic>

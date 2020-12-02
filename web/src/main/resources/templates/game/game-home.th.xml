@@ -1,0 +1,7 @@
+<thlogic xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <attr sel="#title" th:text="#{game.title}"/>
+    <attr sel="#welcome" th:text="#{game.welcome}"/>
+    <attr sel="#play-game"
+          th:href="@{__${T(gr.nikolis.mappings.game.GameMappings).GAME_PLAY}__}"
+          th:text="#{game.play}"/>
+</thlogic>

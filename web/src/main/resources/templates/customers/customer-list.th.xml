@@ -1,0 +1,8 @@
+<thlogic xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <attr sel="#add_ref"
+          th:href="@{__${T(gr.nikolis.mappings.customer.CustomerMappings).ADD_CUSTOMER}__}"/>
+    <attr sel="#edit_ref"
+          th:href="@{__${T(gr.nikolis.mappings.customer.CustomerMappings).EDIT_CUSTOMER}__(id=${customer.id})}"/>
+    <attr sel="#delete_ref"
+          th:href="@{__${T(gr.nikolis.mappings.customer.CustomerMappings).DELETE_CUSTOMER}__(id=${customer.id})}"/>
+</thlogic>

@@ -1,0 +1,4 @@
+<thlogic xmlns:th="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <attr sel="#login_ref"
+          th:action="@{__${T(gr.nikolis.mappings.login.LoginMappings).LOGIN}__}"/>
+</thlogic>
